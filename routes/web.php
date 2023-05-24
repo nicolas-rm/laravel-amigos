@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Agregar rutas nuevas */
+
+Route::get('/amigo', function () {
+    return view('amigo.index');
+});
+

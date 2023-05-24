@@ -1,3 +1,5 @@
+<!-- CREACION DE LA TABLA DE AMIGOS, PARA LOS REGISTROS -->
+<!-- php artisan migrate -->
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,9 +13,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+        /* Al agregar amigos que puedan agregar los sig datos: nombre, apellido paterno, apellido materno, edad, gmail y en donde viven */
         Schema::create('amigos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('apellidoPaterno');
+            $table->string('apellidoMaterno');
+            $table->integer('edad');
+            $table->string('correo');
+            $table->string('direccion');
         });
     }
 
