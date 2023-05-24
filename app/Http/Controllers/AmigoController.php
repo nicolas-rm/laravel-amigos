@@ -12,7 +12,8 @@ class AmigoController extends Controller
      */
     public function index()
     {
-        //
+        // Informacion de la vista
+        return view('amigo.index');
     }
 
     /**
@@ -20,7 +21,8 @@ class AmigoController extends Controller
      */
     public function create()
     {
-        //
+        // Informacion de la vista
+        return view('amigo.create');
     }
 
     /**
