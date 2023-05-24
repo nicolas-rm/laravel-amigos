@@ -30,7 +30,14 @@ class AmigoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Recibe la informacion del formulario
+        /* $datosAmigos = request()->all(); // Obtiene todos los campos */
+        $datosAmigos = request()->except('_token');
+
+        /* Insertar directamente a la base de datos */
+        /* Nombre del modelo / tabla, funcion o proceso */
+        Amigo::insert($datosAmigos);
+        return response()->json($datosAmigos);
     }
 
     /**

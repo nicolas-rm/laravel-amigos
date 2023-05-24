@@ -1,54 +1,60 @@
-Crear un nuevo amigo
-<div class="container-fluid" style="background-color: #EDF3FC;">
+
+@vite(['resources/js/app.js', 'resources/sass/app.scss'])
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="row">
         <div class="col- col-md">
-            <div class="card vh-100">
+            <div class="card">
                 <div class="card-header">
                     <h5 class="card-title fw-semibold">Registro Amigos</h5>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title fw-semibold mb-4">Formulario de Registro</h5>
-                    <form>
+                    <form action="{{ url('/amigo') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <!-- nombre, apellido paterno, apellido materno, edad, gmail y en donde viven -->
                         <div class="row">
                             <div class="col- col-md-6">
                                 <div class="mb-3">
-                                    <label for="nombreText" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombreText" autocomplete="off">
-                                </div>
-                            </div>
-                            <div class="col- col-md-6">
-                                <div class="mb-3">
-                                    <label for="apellidoPaternoText" class="form-label">Apellido Paterno</label>
-                                    <input type="text" class="form-control" id="apellidoPaternoText"
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input name="nombre" type="text" class="form-control" id="nombre"
                                         autocomplete="off">
                                 </div>
                             </div>
                             <div class="col- col-md-6">
                                 <div class="mb-3">
-                                    <label for="apellidoMaternoText" class="form-label">Apellido Materno</label>
-                                    <input type="text" class="form-control" id="apellidoMaternoText"
-                                        autocomplete="off">
+                                    <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
+                                    <input name="apellidoPaterno" type="text" class="form-control"
+                                        id="apellidoPaterno" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col- col-md-6">
                                 <div class="mb-3">
-                                    <label for="edadText" class="form-label">Edad</label>
-                                    <input type="text" class="form-control" id="edadText" autocomplete="off">
+                                    <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
+                                    <input name="apellidoMaterno" type="text" class="form-control"
+                                        id="apellidoMaterno" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col- col-md-6">
+                                <div class="mb-3">
+                                    <label for="edad" class="form-label">Edad</label>
+                                    <input name="edad" type="text" class="form-control" id="edad"
+                                        autocomplete="off">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col- col-md-6">
                                 <div class="mb-3">
-                                    <label for="correoText" class="form-label">Correo</label>
-                                    <input type="text" class="form-control" id="correoText" autocomplete="off">
+                                    <label for="correo" class="form-label">Correo</label>
+                                    <input name="correo" type="text" class="form-control" id="correo"
+                                        autocomplete="off">
                                 </div>
                             </div>
                             <div class="col- col-md-6">
                                 <div class="mb-3">
-                                    <label for="direccionText" class="form-label">Direccion</label>
-                                    <input type="text" class="form-control" id="direccionText" autocomplete="off">
+                                    <label for="direccion" class="form-label">Direccion</label>
+                                    <input name="direccion" type="text" class="form-control"
+                                        id="direccion" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -65,7 +71,7 @@ Crear un nuevo amigo
 
         </div>
         {{-- <div class="col- col-md">
-            <div class="card vh-100">
+            <div class="card">
                 <div class="card-header">
                     <h5 class="card-title fw-semibold">Listado de Registros</h5>
                 </div>

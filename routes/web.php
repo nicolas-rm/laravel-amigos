@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 /* Agregar rutas nuevas */
 /* Mostrar rutas activas */
 
@@ -42,3 +43,5 @@ Route::resource('amigo', AmigoController::class);
   GET|HEAD        api/user .............................................................................
   GET|HEAD        sanctum/csrf-cookie sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
 */
+
+// Auth::routes();
