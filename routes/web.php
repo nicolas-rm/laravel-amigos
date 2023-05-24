@@ -29,7 +29,7 @@ Route::get('/', function () {
 // Route::get('/amigo/create', [AmigoController::class, 'create']);
 
 /* Acceso automatico a todas las url: php artisan route:list  */
-Route::resource('amigo', AmigoController::class);
+Route::resource('amigos', AmigoController::class);
 
 /* Resultado */
 /*

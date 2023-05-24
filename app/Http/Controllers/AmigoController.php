@@ -13,7 +13,8 @@ class AmigoController extends Controller
     public function index()
     {
         // Informacion de la vista
-        return view('amigo.index');
+        $datosAmigos['amigos'] = Amigo::paginate(5);
+        return view('amigo.index', $datosAmigos);
     }
 
     /**
