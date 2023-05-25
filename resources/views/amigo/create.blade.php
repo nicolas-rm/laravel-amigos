@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title fw-semibold mb-4">Formulario de Registro</h5>
-                    <form action="{{ url('/amigo') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/amigos') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- nombre, apellido paterno, apellido materno, edad, gmail y en donde viven -->
                         <div class="row">
