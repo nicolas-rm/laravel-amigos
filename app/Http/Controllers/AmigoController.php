@@ -52,24 +52,34 @@ class AmigoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Amigo $amigo)
+    public function edit($id)
     {
         //
+        $amigo = Amigo::findOrFail($id);
+        return view('amigo.edit', compact('amigo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Amigo $amigo)
+    public function update(Request $request, $id)
     {
-        //
+        // Actualizacion de la informacion
+        $datosAmigo = request()->except(['_token', '_method']);
+        Amigo::where('id', '=', $id)->update($datosAmigo);
+
+        /* Retorno al formulario */
+        $amigo = Amigo::findOrFail($id);
+        return view('amigo.edit', compact('amigo'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Amigo $amigo)
+    public function destroy($id)
     {
         //
+        Amigo::destroy($id);
+        return redirect('amigos');
     }
 }

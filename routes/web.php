@@ -31,6 +31,9 @@ Route::get('/', function () {
 /* Acceso automatico a todas las url: php artisan route:list  */
 Route::resource('amigos', AmigoController::class);
 
+/* Configuracion del metodo edit */
+Route::get('/amigos/edit/{id}', [AmigoController::class, 'edit']);
+
 /* Resultado */
 /*
   GET|HEAD        amigo ............................................ amigo.index › AmigoController@index
