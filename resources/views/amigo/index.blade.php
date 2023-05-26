@@ -1,6 +1,10 @@
 @vite(['resources/js/app.js', 'resources/sass/app.scss'])
 {{-- <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
 </div> --}}
+@if (Session::has('mensaje'))
+    {{ Session::get('mensaje') }}
+@endif
+
 <div class="container">
     <div class="row justify-content-center align-items-center" style="height: 100vh;">
         <div class="col- col-md">

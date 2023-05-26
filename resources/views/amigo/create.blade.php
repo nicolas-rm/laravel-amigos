@@ -13,7 +13,7 @@
                         @csrf
 
                         {{-- REUTILIZACION DE FORMULARIO --}}
-                        @include('amigo.form')
+                        @include('amigo.form', ['modo' => 'Crear'])
                         <!-- nombre, apellido paterno, apellido materno, edad, gmail y en donde viven -->
                     </form>
                 </div>

@@ -12,7 +12,7 @@
                         @csrf
                         {{ method_field('PUT') }}
                         {{-- REUTILIZACION DE FORMULARIO --}}
-                        @include('amigo.form');
+                        @include('amigo.form', ['modo' => 'Actualizar'])
                         <!-- nombre, apellido paterno, apellido materno, edad, gmail y en donde viven -->
                     </form>
                 </div>

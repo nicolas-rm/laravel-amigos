@@ -38,7 +38,8 @@ class AmigoController extends Controller
         /* Insertar directamente a la base de datos */
         /* Nombre del modelo / tabla, funcion o proceso */
         Amigo::insert($datosAmigos);
-        return response()->json($datosAmigos);
+        // return response()->json($datosAmigos);
+        return redirect('amigos')->with('mensaje', 'Amigo Creado Correctamente.!');
     }
 
     /**
@@ -70,7 +71,8 @@ class AmigoController extends Controller
 
         /* Retorno al formulario */
         $amigo = Amigo::findOrFail($id);
-        return view('amigo.edit', compact('amigo'));
+        // return view('amigo.edit', compact('amigo'))->with('mensaje', 'Amigo Actualizado Correctamente.!');
+        return redirect('amigos')->with('mensaje', 'Amigo Actualizado Correctamente.!');
     }
 
     /**
@@ -80,6 +82,6 @@ class AmigoController extends Controller
     {
         //
         Amigo::destroy($id);
-        return redirect('amigos');
+        return redirect('amigos')->with('mensaje', 'Amigo Eliminado Correctamente.!');
     }
 }

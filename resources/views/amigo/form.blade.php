@@ -46,8 +46,8 @@
 </div>
 <div class="row">
     <div class="btn-group">
-        <a type="submit" href="{{ url('amigos/') }}" class="btn btn-warning">Cancelar</a>
-        <a type="submit"  class="btn btn-success">Confirmar</a>
+        <button type="submit" href="{{ url('amigos/') }}" class="btn btn-warning">Cancelar</button>
+        <button type="submit"  class="btn btn-success">{{ $modo }}</button>
         {{-- <a href="#" class="btn btn-primary active" aria-current="page">Active link</a>
         <a href="#" class="btn btn-primary">Link</a>
         <a href="#" class="btn btn-primary">Link</a> --}}
